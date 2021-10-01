@@ -5,6 +5,9 @@
 
 #Time complexity o(n) space complexity o(1)
 def missing_num(arr):
+    if (len(arr) < 1):
+         return False
+
     n = len(arr)+1
     current_sum = 0
     expected_sum = round(n*(n+1)/2)
