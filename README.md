@@ -11,3 +11,5 @@ Print_spira : https://youtu.be/VU-BXcHosNk
 Print_leader: https://youtu.be/4tiYckIhKoc
 
 subarray_givensum:https://youtu.be/HviklPm9HI4
+
+frequency_element :https://youtu.be/wTgH__mmJTo
