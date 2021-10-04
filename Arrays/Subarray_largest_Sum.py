@@ -1,6 +1,6 @@
 #Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers 
 # which has the largest sum.
-#KadanaeAlgorithm
+#Kadanae Algorithm
 #Time complexity o(n) and Space Complexity o(1)
 import sys
 def subarray_largest_sum(arr):
@@ -21,5 +21,5 @@ def subarray_largest_sum(arr):
     return max_sum            
 
 
-arr = [-3,-3,-4,-6,-7]
+arr = [-3,-4,-5,2,4,-6]
 subarray_largest_sum(arr)

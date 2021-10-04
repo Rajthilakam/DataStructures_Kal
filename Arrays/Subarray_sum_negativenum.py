@@ -1,7 +1,7 @@
 #Given an unsorted array of integers, find a subarray which adds to a given number. 
 # If there are more than one subarrays with sum as the given number, print any of them.
 
-#nput: arr[] = {-10, 0, 2, -2, -20, 10}, sum = 20
+#nput: arr[] = {10, 2, -2, -20, 10}, sum = 20
 
 #Ouptut: No subarray with given sum exists
 
@@ -32,7 +32,7 @@ def subArraySum(arr, n, Sum):
     print("No subarray with given sum exists")
 
 
-arr = [-10, 0, 2, -2, -20, 10]  
+arr = [10, 2, -2, -20, 10]  
 n=len(arr)
-Sum = 20
+Sum = -10
 subArraySum(arr, n, Sum)
