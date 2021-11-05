@@ -1,3 +1,4 @@
+
 def LCS(X, Y, m, n):
  
     maxLength = 0           
@@ -18,11 +19,11 @@ def LCS(X, Y, m, n):
     return maxLength
     #return X[endingIndex - maxLength: endingIndex]
   
-X = 'ABC'
+X = 'ABCD'
 Y = 'BABA'
 
 m = len(X)
 n = len(Y)
 
-print('The lenght of longest common substring is', LCS(X, Y, m, n))
+print('The length of longest common substring is', LCS(X, Y, m, n))
  
