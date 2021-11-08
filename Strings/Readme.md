@@ -11,3 +11,7 @@ Longest_Substring_Without_Duplicate: https://youtu.be/O7OZT1bsJ5s
 Longest_Palindromic_SubString : https://youtu.be/_zUB6EOZhIc
 
 Roman_Integer : https://youtu.be/mshy7Th09Q8
+
+Recursive_remove_Adjacent : https://youtu.be/CMIqqRnLYlg
+
+Atoi: 
