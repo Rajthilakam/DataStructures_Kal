@@ -5,9 +5,13 @@ def find_rotate(str1,str2):
     clockwise_rot = ''
     anti_clockwise_rot = ''
         
-    anti_clockwise_rot = str1[2:]+str1[0]+str1[1]
-    clockwise_rot = str1[-2]+str1[-1]+str1[:4]
+    anti_clockwise_rot = str1[2:]+str1[0:2]
+    clockwise_rot = str1[-2]+str1[:4]
     
-    return (str2 == clockwise_rot or str2 == anti_clockwise_rot)
+    #return (str2 == clockwise_rot or str2 == anti_clockwise_rot)
+    if (str2 == clockwise_rot or str2 == anti_clockwise_rot):
+        return True
+    else:
+        return False    
     
 find_rotate('amazon','onamaz')    
