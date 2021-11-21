@@ -25,9 +25,11 @@ class LinkedList:
     def findLoop(self):
         slow = self.head
         fast = self.head
+        # Two pointers slow moves by one and fast moves by two steps
         while(slow and fast and fast.next):
             slow = slow.next
             fast = fast.next.next
+        # If both meets then there is a loop in the linkedlist
             if slow == fast:
                 return True
         return False           
