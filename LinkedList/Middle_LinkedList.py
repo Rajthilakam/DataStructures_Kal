@@ -31,12 +31,13 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
                
-        print("The middle element is ", slow.data)    
+        print("The middle element is ", slow.data)
+        return slow.data    
 
 
 llist = LinkedList()
    
-for i in range(5, 0, -1):
+for i in range(6, 0, -1):
     llist.insert_at_start(i)
-    llist.traverse_list()
-    llist.printMiddle()         
+llist.traverse_list()
+llist.printMiddle()         

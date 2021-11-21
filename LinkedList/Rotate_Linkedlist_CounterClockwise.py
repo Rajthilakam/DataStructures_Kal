@@ -26,7 +26,7 @@ class LinkedList:
                 print(n.data , " ")
                 n = n.next
                 
-    # Rotate the list by n places            
+    # Rotate the list conter clcokwise by n places            
     def rotate_list(self,k):
         
         if not self.head:
@@ -45,10 +45,13 @@ class LinkedList:
             
     # Move the pointer to the pivot(k) and rotate
         cur = self.head
-        for i in range(length-k-1):
+        for i in range (1,k):
             cur = cur.next
+        # Point the tail (end node of the list) to head    
         tail.next = self.head
+        # Change the head pointer to next kth node
         self.head = cur.next
+        # Point the kth node to null
         cur.next = None
          
 # Driver program to test above function
