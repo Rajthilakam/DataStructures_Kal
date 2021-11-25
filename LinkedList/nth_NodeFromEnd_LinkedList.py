@@ -51,5 +51,5 @@ llist.insert_at_start(4)
 llist.insert_at_start(15)
 llist.insert_at_start(35)
   
-llist.printNthNode(3) 
+llist.printNthNode(5) 
 

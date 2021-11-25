@@ -52,14 +52,13 @@ class LinkedList:
 
 first = LinkedList()
 second = LinkedList()
-first.push(6)
 first.push(4)
-first.push(9)
 first.push(5)
-first.push(7)
 
+second.push(3)
 second.push(4)
-second.push(8)
+second.push(5)
+
 
 result = LinkedList()
 result.sum_list(first.head,second.head)

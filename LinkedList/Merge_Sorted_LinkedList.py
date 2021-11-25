@@ -27,38 +27,53 @@ class LinkedList:
         self.head = new_node
 
     #Method to merge sorted list
-    def merge_sorted_List(l1,l2):
-        dummyNode = Node(0)
-        sorting = dummyNode
+def merge_sorted_List(l1,l2):
+    dummyNode = Node(0)
+    tail = dummyNode
 
-        if not l1:
-            return l2
-        if not l2:
-            return l1
-    #Point  sorting to the low value    
-        if(l1.data <= l2.data):
-            sorting = l1
-            l1 = sorting.next
+    while True:
+# If any of the list gets completely empty
+# directly join all the elements of the other list
+        if l1 is None:
+            tail.next = l2
+            break
+        if l2 is None:
+            tail.next = l1
+            break
 
+        # Compare both the data of the lists and whichever is smaller is
+        # appended to the new node of the merged list and the head is changed
+        if l1.data <= l2.data:
+            tail.next = l1
+            l1 = l1.next
         else:
-           sorting = l2
-           l2 = sorting.next 
+            tail.next = l2
+            l2 = l2.next
 
-    #Check l1 is less than l2 and change the pointers acccording to that
-        while (l1 and l2):
-            if(l1.data <= l2.data):
-                sorting.next = l1
-                sorting = l1
-                l1 = sorting.next
-            else:
-                sorting.next = l2
-                sorting = l2
-                l2 = sorting.next  
+        # Advance the tail
+        tail = tail.next
 
-        if (l1.next is None):
-            sorting.next = l2
+    return dummyNode.next
 
-        if (l2.next is None):
-            sorting.next = l1    
 
-        return dummyNode.next
+
+l1 = LinkedList()
+l1.insert_at_start(8)
+l1.insert_at_start(6)
+l1.insert_at_start(4)
+l1.insert_at_start(2)
+
+l2 = LinkedList()
+l2.insert_at_start(7)
+l2.insert_at_start(5)
+l2.insert_at_start(3)
+l2.insert_at_start(1)
+
+l3 = LinkedList()
+l3.head = merge_sorted_List(l1.head,l2.head)
+l3.traverse_list()
+
+
+
+
+          
