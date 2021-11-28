@@ -58,6 +58,7 @@ def merge_sorted_List(l1,l2):
 
 
 l1 = LinkedList()
+l1.insert_at_start(12)
 l1.insert_at_start(8)
 l1.insert_at_start(6)
 l1.insert_at_start(4)
