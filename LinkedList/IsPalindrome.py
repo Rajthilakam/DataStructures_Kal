@@ -41,6 +41,7 @@ class LinkedList:
             tmp = slow.next
             slow.next = prev
             prev = slow
+            print(prev.data)
             slow = tmp                
 
         #Check Palindrome
@@ -49,11 +50,13 @@ class LinkedList:
             if left.data != right.data:
                 print ("False")
                 return False
+                
         return True
 
 llist = LinkedList()
 llist.push(40)
 llist.push(30)
+llist.push(20)
 llist.push(30)
 llist.push(40)
  

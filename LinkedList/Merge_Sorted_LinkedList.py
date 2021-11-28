@@ -69,6 +69,7 @@ l2.insert_at_start(5)
 l2.insert_at_start(3)
 l2.insert_at_start(1)
 
+
 l3 = LinkedList()
 l3.head = merge_sorted_List(l1.head,l2.head)
 l3.traverse_list()

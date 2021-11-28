@@ -62,6 +62,7 @@ second.push(5)
 
 result = LinkedList()
 result.sum_list(first.head,second.head)
+result.traverse_list()
 
 
 
