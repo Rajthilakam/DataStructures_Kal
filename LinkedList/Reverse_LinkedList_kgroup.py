@@ -50,7 +50,7 @@ def reverseInGroups(head, k):
 if __name__ == '__main__':
  
     head = None
-    for i in reversed(range(8)):
+    for i in reversed(range(5)):
         head = Node(i + 1, head)
  
     head = reverseInGroups(head, 3)
