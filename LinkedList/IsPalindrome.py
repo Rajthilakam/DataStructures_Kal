@@ -27,37 +27,51 @@ class LinkedList:
                 n = n.next
 
     def palindrome(self):
-        fast = self.head
-        slow = self.head
         
-        #Find middle element in the linkedlist
-        while fast and fast.next:
-            fast = fast.next.next
-            slow = slow.next
+        # Temp pointer
+        slow = self.head
+    
+        # Declare a stack
+        stack = []
+        
+        ispalin = True
+    
+        # Push all elements of the list
+        # to the stack
+        while slow != None:
+            stack.append(slow.data)
             
-        #Reverse Second half
-        prev = None
-        while slow:
-            tmp = slow.next
-            slow.next = prev
-            prev = slow
-            print(prev.data)
-            slow = tmp                
-
-        #Check Palindrome
-        left,right = self.head,prev
-        while right:
-            if left.data != right.data:
-                print ("False")
-                return False
+            # Move ahead
+            slow = slow.next
+ 
+    # Iterate in the list again and
+    # check by popping from the stack
+        curr = self.head
+        while curr != None:
+    
+            # Get the top most element
+            i = stack.pop()
+            
+            # Check if data is not
+            # same as popped element
+            if curr.data == i:
+                ispalin = True
+            else:
+                ispalin = False
+                break
+    
+            # Move ahead
+            curr = curr.next
+            
+        return ispalin
                 
-        return True
+        
 
 llist = LinkedList()
 llist.push(40)
 llist.push(30)
 llist.push(20)
 llist.push(30)
-llist.push(40)
+llist.push(4)
  
 llist.palindrome()                    
