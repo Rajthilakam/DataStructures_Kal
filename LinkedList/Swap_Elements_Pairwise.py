@@ -1,53 +1,56 @@
-class Node:  
-    # Constructor to initialize the node object
-    def __init__(self, data):
+class Node:
+    def __init__(self, data=None, next=None):
         self.data = data
-        self.next = None
-  
-class LinkedList:  
-    # Function to initialize head
-    def __init__(self):
-        self.head = None
-  
-    # Function to insert a new node at the beginning
-    def push(self, new_data):
-        new_node = Node(new_data)
-        new_node.next = self.head
-        self.head = new_node
-        
-     # Function to print the list        
-    def traverse_list(self):
-        if self.head is None:
-            print("List has no element")
-            return
+        self.next = next
+ 
+ 
+# Helper function to print a given linked list
+def printList(msg, head):
+ 
+    print(msg, end='')
+    ptr = head
+    while ptr:
+        print(ptr.data, end=' —> ')
+        ptr = ptr.next
+ 
+    print('None')
+ 
+ 
+# Function to pairwise swap adjacent nodes of a linked list
+def rearrange(head):
+ 
+    # if the list is empty or contains just one node
+    if head is None or head.next is None:
+        return head
+ 
+    curr = head
+    prev = None
+ 
+    # consider two nodes at a time and swap their links
+    while curr and curr.next:
+ 
+        temp = curr.next
+        curr.next = temp.next
+        temp.next = curr
+ 
+        if prev is None:
+            head = temp
         else:
-            n = self.head
-            while n is not None:
-                print(n.data , " ")
-                n = n.next
-
-    def swap_elements_pairwise(self):
-        dummy = Node(0)
-        prev, curr = dummy, self.head
-        
-        while curr and curr.next:
-            # store pointers
-            newHead = curr.next
-            nextCurr = newHead.next
-            
-            # swap
-            prev.next = newHead
-            newHead.next = curr
-            curr.next = nextCurr
-
-            if (nextCurr is None or nextCurr.next is None):
-                curr.next = nextCurr
-                break
-            
-            # move to next pair
-            prev = curr
-            curr = nextCurr
-        
-        return dummy.next
-        
-
+            prev.next = temp
+ 
+        prev = curr
+        curr = curr.next
+ 
+    return head
+ 
+ 
+if __name__ == '__main__':
+ 
+    head = None
+    for i in reversed(range(8)):
+        head = Node(i + 1, head)
+ 
+    printList('Before : ', head)
+    head = rearrange(head)
+    printList('After : ', head)
+ 
