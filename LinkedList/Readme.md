@@ -16,3 +16,5 @@ Swap Elements Pairwise: https://youtu.be/eIq2rgVlECM
 Add two Linkedlist : https://youtu.be/YgI-NUI5vw0
 
 Palindrome : 
+
+Flattening a Linkedlist:
