@@ -1,71 +1,102 @@
-class Node:  
-    # Constructor to initialize the node object
-    def __init__(self, data):
+class Node:
+    def __init__(self, data=None, next=None):
         self.data = data
-        self.next = None
-  
-class LinkedList:  
-    # Function to initialize head
-    def __init__(self):
-        self.head = None
-  
-    # Function to insert a new node at the beginning
-    def push(self, new_data):
-        new_node = Node(new_data)
-        new_node.next = self.head
-        self.head = new_node
-
-    #Print the list
-    def traverse_list(self):
-        if self.head is None:
-            print("List has no element")
-            return
+        self.next = next
+ 
+ 
+# Function to print a given linked list
+def printList(head):
+ 
+    ptr = head
+    while ptr:
+        print(ptr.data, end=' —> ')
+        ptr = ptr.next
+    print('None')
+ 
+def reverse(head):
+ 
+    out = None
+    current = head
+ 
+    # traverse the list
+    while current:
+        
+        next = current.next
+        # move the current node onto the out
+        current.next = out
+        out = current
+        current = next 
+    # fix head
+    return out
+ 
+ 
+# Function to add two lists, `X` and `Y`
+def append(X, Y):
+ 
+    head = None 
+    # stores the last seen node
+    prev = None 
+    # initialize carry with 0
+    carry = 0 
+    # run till both lists are empty
+    while X or Y: 
+        # sum is X's data + Y's data + carry (if any)
+        total = 0
+        if X:
+            total += X.data
+        if Y:
+            total += Y.data 
+        total += carry 
+        # if the sum of a 2–digit number, reduce it and update carry
+        carry = total // 10
+        total = total % 10 
+        # create a new node with the calculated sum
+        node = Node(total) 
+        # if the output list is empty
+        if head is None:
+            # update `prev` and `head` to point to the new node
+            prev = node
+            head = node
         else:
-            n = self.head
-            while n is not None:
-                print(n.data , " ")
-                n = n.next    
-
-    #Add the two linkedlist
-    def sum_list(self,l1,l2):
-        dummyNode = Node(0)
-        temp = dummyNode
-        carry = 0
-
-        while(l1 is not None or l2 is not None or carry ):
-            sum = 0
-            if(l1 is not None):
-                sum+=l1.data
-                l1 = l1.next
-
-            if l2:
-                sum+=l2.data
-                l2 = l2.next
-
-            sum+=carry
-            carry = sum//10
-            newNode = Node(sum%10)
-            temp.next = newNode
-            temp = temp.next
-
-        return dummyNode.next
-
-first = LinkedList()
-second = LinkedList()
-first.push(4)
-first.push(5)
-
-second.push(3)
-second.push(4)
-second.push(5)
-
-
-result = LinkedList()
-result.sum_list(first.head,second.head)
-result.traverse_list()
-
-
-
-
-
+            # add the new node to the output list
+            prev.next = node 
+            # update the previous node to point to the new node
+            prev = node 
+        # advance `X` and `Y` for the next iteration of the loop
+        X = X.next if X else X
+        Y = Y.next if Y else Y 
+    if carry:
+        prev.next = Node(carry, prev.next)
+    return head
+ 
+ 
+# Function to add two lists, `X` and `Y`
+def addLists(X, Y):
+ 
+    # reverse `X` and `Y` to access elements from the end
+    X = reverse(X)
+    Y = reverse(Y)
+ 
+    return reverse(append(X, Y))
+ 
+ 
+if __name__ == '__main__':
+ 
+    x = 5734
+    y = 946
+ 
+    # construct list `X` (5 —> 7 —> 3 —> 4) from number `x`
+    X = None
+    while x:
+        X = Node(x % 10, X)
+        x = x // 10
+ 
+    # construct list `Y` (9 —> 4 —> 6) from number `y`
+    Y = None
+    while y:
+        Y = Node(y % 10, Y)
+        y = y // 10
+ 
+    printList(addLists(X, Y))
+ 
 
