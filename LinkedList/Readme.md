@@ -10,3 +10,5 @@ Nth Node from end : https://youtu.be/YGCoKiy7L6g
 Merge Sorted Linked List : https://youtu.be/voAJjO8AbV4
 
 Reverse LinkedList k groups: https://youtu.be/uB5w4u5z8ZI
+
+Swap Elements Pairwise:
