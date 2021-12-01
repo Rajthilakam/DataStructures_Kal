@@ -26,43 +26,32 @@ class LinkedList:
                 print(n.data , " ")
                 n = n.next
 
-    def palindrome(self):
-        
-        # Temp pointer
+    def palindrome(self):        
+
         slow = self.head
-    
-        # Declare a stack
+
         stack = []
         
         ispalin = True
-    
-        # Push all elements of the list
-        # to the stack
+
         while slow != None:
             stack.append(slow.data)
             
-            # Move ahead
             slow = slow.next
  
-    # Iterate in the list again and
-    # check by popping from the stack
         curr = self.head
-        while curr != None:
-    
+        while curr != None:    
             # Get the top most element
-            i = stack.pop()
-            
+            i = stack.pop()            
             # Check if data is not
             # same as popped element
             if curr.data == i:
                 ispalin = True
             else:
                 ispalin = False
-                break
-    
-            # Move ahead
-            curr = curr.next
-            
+                break    
+            # Move the pointer
+            curr = curr.next            
         return ispalin
                 
         
@@ -72,6 +61,6 @@ llist.push(40)
 llist.push(30)
 llist.push(20)
 llist.push(30)
-llist.push(4)
+llist.push(40)
  
 llist.palindrome()                    
