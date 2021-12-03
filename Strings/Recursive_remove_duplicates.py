@@ -20,7 +20,7 @@ def remove_adj(s):
         else:
             res+=s[i]
         i+=1
-    
+    print(res)
     return res
         
 str_remove('acaaabbbacdddd') 
