@@ -12,6 +12,7 @@ def two_sum_hash(a,target):
         diff = target - n
         if diff in hashed:
             print([hashed[diff]+1,i+1])
+            #Return the index which is one based
             return ([hashed[diff],i])
         hashed[n] = i    
 
