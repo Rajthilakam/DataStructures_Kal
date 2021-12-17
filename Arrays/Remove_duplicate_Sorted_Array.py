@@ -13,7 +13,8 @@ def remove_duplicates_sorted_array(arr):
         #Increase the left pointer    
             left+=1
 
-    #Return length     
-    return left 
+    #Return length 
+    print (arr)   
+    return left
     
 remove_duplicates_sorted_array(arr)    
