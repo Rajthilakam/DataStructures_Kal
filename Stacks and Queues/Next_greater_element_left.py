@@ -10,6 +10,7 @@ def findgreaterleft(input):
         while s and input[i] > input[s[-1]]:
             result[s[-1]] = input[i]
             s.pop()
+        #Storing the index in stack popping out once we find the value for the corresponding index   
         s.append(i)
     print(result)         
     return result    
