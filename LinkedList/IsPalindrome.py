@@ -51,7 +51,8 @@ class LinkedList:
                 ispalin = False
                 break    
             # Move the pointer
-            curr = curr.next            
+            curr = curr.next   
+        print(ispalin)             
         return ispalin
                 
         
@@ -59,6 +60,7 @@ class LinkedList:
 llist = LinkedList()
 llist.push(40)
 llist.push(30)
+llist.push(10)
 llist.push(20)
 llist.push(30)
 llist.push(40)

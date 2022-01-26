@@ -28,11 +28,11 @@ def subArraySum(arr, n, Sum):
             return
    
         dict[curr_sum] = i
-   
+        
     print("No subarray with given sum exists")
 
 
 arr = [10, 2, -2, -20, 10]  
 n=len(arr)
-Sum = -10
+Sum = -12
 subArraySum(arr, n, Sum)
