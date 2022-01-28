@@ -16,5 +16,5 @@ def house_robber(nums):
     print(dp[-1])  
     return dp[-1] # return the last element
 
-nums = [1,2,3,4]    
+nums = [1,2,3,4,5]    
 house_robber(nums)
