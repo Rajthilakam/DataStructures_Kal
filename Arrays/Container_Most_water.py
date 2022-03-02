@@ -9,6 +9,7 @@ def maxArea(height):
     while (l < r):
         #Calculate area by taking a diff in two pointers multiply by lowest element between two
         curr_area = (r-l) * min(height[l],height[r])
+        print(curr_area)
         if curr_area > maxArea:
             maxArea = curr_area
         if height[l] < height[r]:
